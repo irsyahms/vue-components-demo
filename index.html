@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <title>Vue Components</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="row">
+        <div class="col-3">
+          <form-add-ninja v-on:add-ninja="createNinja"/>
+        </div>
+        <div class="col">
+          <div class="row">
+            <div class="col" v-for="ninja in ninjas">
+              <ninja-card v-bind:title="title" v-bind:ninja="ninja" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ninja-card
+        v-bind:title="title"
+        v-bind:ninja="coach" />
+
+    </div>
+
+    <script src="./js/components/ninja-card.js"></script>
+    <script src="./js/components/form-add-ninja.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
